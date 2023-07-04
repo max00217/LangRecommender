@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Programming Language Recommender</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script src="recommender.js" defer></script>
+    <script>
+        window.onload = function() {
+            displayQuestion();
+        }
+    </script>
+</head>
+<body>
+    <h1>Programming Language Recommender</h1>
+    <div id="quiz-container">
+        <h2 id="question-text">Question:</h2>
+        <button id="choice-1" onclick="updateChoice(0)">Choice 1</button>
+        <button id="choice-2" onclick="updateChoice(1)">Choice 2</button>
+        <button id="choice-3" onclick="updateChoice(2)">Choice 3</button>
+        <button id="choice-4" onclick="updateChoice(3)">Choice 4</button>
+        <p id="question-count"></p>
+    </div>
+    <div id="results" class="hidden">
+        <h2>We recommend the programming language: <span id="language-result"></span></h2>
+    </div>
+</body>
+</html>
