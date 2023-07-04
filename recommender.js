@@ -355,7 +355,7 @@ const languages = [
     "JavaScript",
     "C",
     "C++",
-    "C#",
+    "CSharp",
     "Ruby",
     "Go",
     "PHP",
@@ -400,9 +400,17 @@ const languageScores = [
 function displayResult() {
     document.getElementById("quiz-container").classList.add("hidden");
     const recommendedLanguage = recommendLanguage();
-    document.getElementById("language-result").textContent = recommendedLanguage;
-    document.getElementById("results").classList.remove("hidden");
-}
+  
+    // 언어별로 파일명을 리턴하는 함수
+    function getHtmlFileName(language) {
+      return 'langs/' + language.toLowerCase().replaceAll(' ', '-') + '.html';
+    }
+  
+    // 결과에 따라 해당 언어의 페이지로 이동
+    const htmlFileName = getHtmlFileName(recommendedLanguage);
+    window.location.href = htmlFileName;
+  }
+  
 
 
 function recommendLanguage() {
