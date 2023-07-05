@@ -666,7 +666,7 @@ const languageScores = [
     [6, -2, 4, 1, 4, 3, 0, 5, 5, 3, 7, 6, 3, 2, 3], // Ruby
     [4, -2, 4, 0, 3, 3, 1, 3, 4, 3, 7, 4, 1, 1, 1], // PHP
     [4, 2, 4, 1, 5, 2, 7, 4, 4, 4, 4, 7, 6, 4, 2], // Swift
-    [5, 2, 5, 3, 4, 7, 4, 4, 5, 4, 4, 7, 4, 3, 3], // Kotlin
+    [5, 2, 5, 3, 4, 7, 4, 4, 5, 4, 4, 7, 4, 2, 2], // Kotlin
     [4, 2, 4, 4, 4, 5, 5, 4, 4, 4, 5, 5, 4, 3, 3], // Rust
     [6, -2, 4, 3, 3, 5, 4, 4, 5, 3, 6, 6, 5, 2, 3], // Dart
     [7, -2, 3, 3, 3, 5, 7, 5, 4, 2, 4, 3, 7, 3, 2], // Lua
@@ -679,17 +679,13 @@ function displayResult() {
     document.getElementById("quiz-container").classList.add("hidden");
     const recommendedLanguage = recommendLanguage();
 
-    // 언어별로 파일명을 리턴하는 함수
     function getHtmlFileName(language) {
         return 'langs/' + language.toLowerCase().replaceAll(' ', '-') + '.html';
     }
 
-    // 결과에 따라 해당 언어의 페이지로 이동
     const htmlFileName = getHtmlFileName(recommendedLanguage);
     window.location.href = htmlFileName;
 }
-
-
 
 function recommendLanguage() {
     const bestMatch = languages.reduce(
