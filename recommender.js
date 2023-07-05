@@ -8,7 +8,12 @@ const categories = [
     "Speed", //6
     "Simplecode", //7
     "Dev speed", //8
-    "Standard Library" //9
+    "Standard Library", //9
+    "ForWeb", //10
+    "ForApp", //11
+    "ForGame", //12
+    "ForAI", //13
+    "ForData", //14
 ];
 
 const questions = [
@@ -18,7 +23,7 @@ const questions = [
             {
                 text: "네, 저는 빠르게 배우고 싶어요.",
                 value: {
-                    0: 4,
+                    0: 3,
                     2: 1,
                     4: 1,
                     7: 3,
@@ -46,12 +51,12 @@ const questions = [
             {
                 text: "쉽든 어렵든 상관 없어요.",
                 value: {
-                    0: 2,
-                    2: 2,
-                    3: 2,
-                    4: 2,
-                    7: 2,
-                    9: 2
+                    0: 1,
+                    2: 1,
+                    3: 1,
+                    4: 1,
+                    7: 1,
+                    9: 1
                 },
             },
         ],
@@ -92,7 +97,7 @@ const questions = [
             {
                 text: "오류는 발생하고 나서 확인할래요.",
                 value: {
-                    1: -2,
+                    1: -3,
                     0: 1,
                     6: 1,
                     7: 1,
@@ -105,7 +110,7 @@ const questions = [
         text: "코드 작성 과정에서 각각의 부분을 분할하여 관리하는 것을 선호하나요?",
         choices: [
             {
-                text: "네, 객체나 클래스를 사용해서 코드를 분할하여 관리하는 것이 편해요.",
+                text: "네, 각 부분을 객체로 나눠서 코드를 관리하는 것이 편해요.",
                 value: {
                     2: 4,
                     0: 1,
@@ -131,11 +136,11 @@ const questions = [
             {
                 text: "코드 구조에 관해선 그다지 신경쓰지 않아요.",
                 value: {
-                    2: 1,
+                    2: 2,
                     3: 1,
                     7: 1,
                     1: 1,
-                    4: 1
+                    4: 2
                 },
             },
         ],
@@ -144,7 +149,7 @@ const questions = [
         text: "코드 불변성을 이용해 에러 발생 가능성을 낮춰 코드의 복잡성을 줄이고 싶나요?",
         choices: [
             {
-                text: "네, 순수 함수와 불변성을 사용하려고 해요.",
+                text: "네, 순수 함수와 불변성을 이용하려고 해요.",
                 value: {
                     3: 4,
                     2: -2,
@@ -153,7 +158,7 @@ const questions = [
                 },
             },
             {
-                text: "아니요, 명령형 스타일이 더 사용하기 편해요",
+                text: "아니요, 대중적인 명령형 스타일이 더 사용하기 편해요",
                 value: {
                     3: -4,
                     2: 2,
@@ -216,7 +221,7 @@ const questions = [
             {
                 text: "네, 다양한 플랫폼에서 작동해야 해요.",
                 value: {
-                    5: 4,
+                    5: 7,
                     0: 1,
                     4: 1
                 },
@@ -383,79 +388,305 @@ const questions = [
             },
         ],
     },
+    {
+        text: "웹 개발에 관심이 있나요?",
+        choices: [
+            {
+                text: "네, 웹사이트를 통해 다양한 기능을 구현하고 싶어요.",
+                value: {
+                    10: 7,
+                    11: -1,
+                    12: -1,
+                    13: -1,
+                    14: -1,
+                },
+            },
+            {
+                text: "아니요, 웹은 너무 흔해요.",
+                value: {
+                    10: -3,
+                    11: 1,
+                    12: 1,
+                    13: 1,
+                    14: 1,
+                },
+            },
+            {
+                text: "잘 모르겠어요.",
+                value: {
+                    10: 0,
+                    11: 1,
+                    12: 1,
+                    13: 1,
+                    14: 1,
+                },
+            },
+            {
+                text: "개발 분야에 관해선 그다지 신경쓰지 않아요.",
+                value: {
+                    10: 2,
+                    11: 1,
+                    12: 1,
+                    13: 1,
+                    14: 1,
+                },
+            },
+        ],
+    },
+    {
+        text: "앱 개발에 관심이 있나요?",
+        choices: [
+            {
+                text: "네, 스마트폰을 통해 사용 가능한 기능을 구현하고 싶어요.",
+                value: {
+                    10: -1,
+                    11: 7,
+                    12: -1,
+                    13: -1,
+                    14: -1,
+                },
+            },
+            {
+                text: "아니요, 앱은 복잡해보여요.",
+                value: {
+                    10: 1,
+                    11: -4,
+                    12: 1,
+                    13: 1,
+                    14: 1,
+                },
+            },
+            {
+                text: "잘 모르겠어요.",
+                value: {
+                    10: 1,
+                    11: 0,
+                    12: 1,
+                    13: 1,
+                    14: 1,
+                },
+            },
+            {
+                text: "개발 분야에 관해선 그다지 신경쓰지 않아요.",
+                value: {
+                    10: 1,
+                    11: 2,
+                    12: 1,
+                    13: 1,
+                    14: 1,
+                },
+            },
+        ],
+    },
+    {
+        text: "게임 개발에 관심이 있나요?",
+        choices: [
+            {
+                text: "네, 게임 개발에 관심이 있어요.",
+                value: {
+                    10: -1,
+                    11: -1,
+                    12: 7,
+                    13: -1,
+                    14: -1,
+                },
+            },
+            {
+                text: "아니요, 게임 개발에 필요한 요소는 구현하기 어려워보여요.",
+                value: {
+                    10: 1,
+                    11: 1,
+                    12: -4,
+                    13: 1,
+                    14: 1,
+                },
+            },
+            {
+                text: "잘 모르겠어요.",
+                value: {
+                    10: 1,
+                    11: 1,
+                    12: 0,
+                    13: 1,
+                    14: 1,
+                },
+            },
+            {
+                text: "개발 분야에 관해선 그다지 신경쓰지 않아요.",
+                value: {
+                    10: 1,
+                    11: 1,
+                    12: 2,
+                    13: 1,
+                    14: 1,
+                },
+            },
+        ],
+    },
+    {
+        text: "인공지능 개발에 관심이 있나요?",
+        choices: [
+            {
+                text: "네, 인공지능, 머신 러닝 등에 관심이 있어요.",
+                value: {
+                    10: -1,
+                    11: -1,
+                    12: -1,
+                    13: 7,
+                    14: -1,
+                },
+            },
+            {
+                text: "아니요, 저에게 인공지능은 너무 어려워요.",
+                value: {
+                    10: 1,
+                    11: 1,
+                    12: 1,
+                    13: -4,
+                    14: 1,
+                },
+            },
+            {
+                text: "잘 모르겠어요.",
+                value: {
+                    10: 1,
+                    11: 1,
+                    12: 1,
+                    13: 0,
+                    14: 1,
+                },
+            },
+            {
+                text: "개발 분야에 관해선 그다지 신경쓰지 않아요.",
+                value: {
+                    10: 1,
+                    11: 1,
+                    12: 1,
+                    13: 2,
+                    14: 1,
+                },
+            },
+        ],
+    },
+    {
+        text: "데이터 분석에 관심이 있나요?",
+        choices: [
+            {
+                text: "네, 데이터 및 자료를 분석하는 것에 관심이 있어요.",
+                value: {
+                    10: -1,
+                    11: -1,
+                    12: -1,
+                    13: -1,
+                    14: 7,
+                },
+            },
+            {
+                text: "아니요, 기능 개발에 더 관심이 있어요.",
+                value: {
+                    10: 1,
+                    11: 1,
+                    12: 1,
+                    13: 1,
+                    14: -4,
+                },
+            },
+            {
+                text: "잘 모르겠어요.",
+                value: {
+                    10: 1,
+                    11: 1,
+                    12: 1,
+                    13: 1,
+                    14: 0,
+                },
+            },
+            {
+                text: "개발 분야에 관해선 그다지 신경쓰지 않아요.",
+                value: {
+                    10: 1,
+                    11: 1,
+                    12: 1,
+                    13: 1,
+                    14: 2,
+                },
+            },
+        ],
+    }
+
 ];
 
 
-    let currentIndex = 0;
-    let categoryScore = Array(categories.length).fill(0);
+let currentIndex = 0;
+let categoryScore = Array(categories.length).fill(0);
 
-    function displayQuestion() {
-        if (currentIndex >= questions.length) {
-            displayResult();
-            return;
-        }
-        document.getElementById("question-text").textContent = questions[currentIndex].text;
-        document.getElementById("choice-1").textContent = questions[currentIndex].choices[0].text;
-        document.getElementById("choice-2").textContent = questions[currentIndex].choices[1].text;
-        document.getElementById("choice-3").textContent = questions[currentIndex].choices[2].text;
-        document.getElementById("choice-4").textContent = questions[currentIndex].choices[3].text;
-        document.getElementById("question-count").textContent = `질문 ${currentIndex + 1} of ${questions.length}`;
+function displayQuestion() {
+    if (currentIndex >= questions.length) {
+        displayResult();
+        return;
+    }
+    document.getElementById("question-text").textContent = questions[currentIndex].text;
+    document.getElementById("choice-1").textContent = questions[currentIndex].choices[0].text;
+    document.getElementById("choice-2").textContent = questions[currentIndex].choices[1].text;
+    document.getElementById("choice-3").textContent = questions[currentIndex].choices[2].text;
+    document.getElementById("choice-4").textContent = questions[currentIndex].choices[3].text;
+    document.getElementById("question-count").textContent = `${currentIndex + 1} of ${questions.length} Questions`;
+}
+
+
+function updateChoice(choiceIndex) {
+    const question = questions[currentIndex];
+    const choice = question.choices[choiceIndex];
+
+    for (const catIndex in choice.value) {
+        categoryScore[catIndex] += choice.value[catIndex];
     }
 
+    currentIndex += 1;
+    displayQuestion();
+}
 
-    function updateChoice(choiceIndex) {
-        const question = questions[currentIndex];
-        const choice = question.choices[choiceIndex];
+const languages = [
+    "Python",
+    "Java",
+    "JavaScript",
+    "C",
+    "C++",
+    "CSharp",
+    "Ruby",
+    "PHP",
+    "Swift",
+    "Kotlin",
+    "Rust",
+    "Dart",
+    "Lua",
+    "Haskell",
+    "Assembly",
+    "Scratch"
+];
 
-        for (const catIndex in choice.value) {
-            categoryScore[catIndex] += choice.value[catIndex];
-        }
+const languageScores = [
+    /* "beginner friendly", "static/dynamic typing", "OOP", "Functional", 
+    "Community Resource", "Multi-Platform", "Speed", "Simplecode", "Dev speed", "Standard Library", 
+    "ForWeb", "ForApp", "ForGame", "ForAI", "ForData" */
+    [7, -2, 4, 0, 6, 3, 0, 4, 6, 6, 5, 4, 4, 7, 6], // Python
+    [2, 2, 4, 0, 6, 7, 3, 0, 4, 5, 3, 7, 5, 2, 2], // Java
+    [5, -2, 2, 5, 7, 6, 4, 4, 3, 6, 7, 5, 4, 2, 2], // JavaScript
+    [0, 2, 2, 2, 3, 4, 7, 2, 3, 2, 2, 3, 1, 1, 1], // C
+    [2, 2, 5, 0, 4, 4, 7, 3, 4, 4, 2, 3, 6, 2, 2], // C++
+    [2, 2, 5, 0, 4, 5, 7, 4, 4, 5, 2, 4, 7, 2, 2], // C#
+    [6, -2, 4, 1, 4, 3, 0, 5, 5, 3, 7, 6, 3, 2, 3], // Ruby
+    [4, -2, 4, 0, 3, 3, 1, 3, 4, 3, 7, 4, 1, 1, 1], // PHP
+    [4, 2, 4, 1, 5, 2, 7, 4, 4, 4, 4, 7, 6, 4, 2], // Swift
+    [5, 2, 5, 3, 4, 7, 4, 4, 5, 4, 4, 7, 4, 3, 3], // Kotlin
+    [4, 2, 4, 4, 4, 5, 5, 4, 4, 4, 5, 5, 4, 3, 3], // Rust
+    [6, -2, 4, 3, 3, 5, 4, 4, 5, 3, 6, 6, 5, 2, 3], // Dart
+    [7, -2, 3, 3, 3, 5, 7, 5, 4, 2, 4, 3, 7, 3, 2], // Lua
+    [2, 2, 0, 5, 2, 2, 2, 4, 3, 4, 3, 3, 3, 4, 3], // Haskell
+    [-1, 2, 1, 1, 1, 1, 6, -1, -1, -1, 1, 1, 1, 1, 1], // Assembly
+    [9, -1, 1, 1, 2, 1, 0, 4, 4, 1, 2, 2, 2, 2, 2] // Scratch
+];
 
-        currentIndex += 1;
-        displayQuestion();
-    }
-
-    const languages = [
-        "Python",
-        "Java",
-        "JavaScript",
-        "C",
-        "C++",
-        "CSharp",
-        "Ruby",
-        "Go",
-        "PHP",
-        "Swift",
-        "Kotlin",
-        "Rust",
-        "Dart",
-        "Lua",
-        "Haskell",
-        "Assembly",
-        "Scratch"
-    ];
-
-    const languageScores = [
-        /* "beginner friendly", "static/dynamic typing", "OOP", "Functional", "Community Resource", "Multi-Platform", "Speed", "Simplecode", "Dev speed", "Standard Library"
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9*/
-        [7, -2, 4, 1, 7, 3, 1, 5, 6, 7], // Python
-        [2, 2, 4, 0, 6, 7, 3, 0, 4, 5], // Java
-        [5, -2, 2, 5, 7, 6, 4, 4, 3, 6], // JavaScript
-        [0, 2, 1, 1, 3, 4, 5, 2, 3, 2], // C
-        [2, 2, 5, 0, 4, 4, 4, 2, 4, 4], // C++
-        [2, 2, 5, 0, 4, 5, 3, 2, 4, 4], // C#
-        [6, -2, 4, 1, 4, 3, 0, 5, 5, 3], // Ruby
-        [5, 2, 3, 3, 6, 4, 5, 4, 5, 4], // Go
-        [4, -2, 4, 0, 3, 3, 1, 3, 4, 3], // PHP
-        [4, 2, 4, 1, 5, 2, 7, 4, 4, 4], // Swift
-        [5, 2, 5, 3, 4, 7, 4, 4, 5, 4], // Kotlin
-        [4, 2, 4, 4, 4, 5, 5, 4, 4, 4], // Rust
-        [6, -2, 4, 3, 3, 5, 4, 4, 5, 3], // Dart
-        [7, -2, 3, 3, 3, 5, 7, 5, 4, 2], // Lua
-        [2, 2, 0, 5, 2, 2, 2, 4, 3, 4], // Haskell
-        [-1, 2, 1, 1, 1, 1, 6, -1, -1, -1], // Assembly
-        [9, -1, 1, 1, 2, 1, 0, 4, 4, 1] // Scratch
-    ];
 
 function displayResult() {
     document.getElementById("quiz-container").classList.add("hidden");
