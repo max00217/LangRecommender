@@ -1,48 +1,44 @@
-/* 전체 페이지 스타일 */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    text-align: center;
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  /* 제목 스타일 */
-  h1, h2 {
-    color: #333;
-    font-weight: bold;
-  }
-  
-  /* 문단 스타일 */
-  p {
-    margin-bottom: 100px;
-  }
-  
-  /* 코드 예제일 */
-  pre {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    padding: 10px;
-    font-family: 'Courier New', monospace;
-    overflow-x: auto;
-  }
-  
-  /* 돌아가기 링크 스타일 */
-  a {
-    display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px}
-  
-  a:hover {
-    background-color: #555;
-  }
-  
-/* CSS */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  color: #333;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 100px;
+}
+
+pre {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  overflow-x: auto;
+}
+
+a {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px
+}
+
+a:hover {
+  background-color: #555;
+}
+
 button {
   appearance: none;
   background-color: #000000;
@@ -52,7 +48,7 @@ button {
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 12px;
   font-weight: 600;
   line-height: 140%;
@@ -84,4 +80,12 @@ button:hover {
 button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+.colorscripter-code {
+  text-align: center;
+}
+
+.colorscripter-code-table {
+  text-align: center;
 }
