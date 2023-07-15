@@ -16,6 +16,7 @@ h2 {
 
 p {
   margin-bottom: 100px;
+  color: #DFDFDF; 
 }
 
 pre {
@@ -88,7 +89,7 @@ button:active {
 }
 
 .colorscripter-code {
-  text-align: center;
+  align-content: center;
 }
 
 .colorscripter-code-table {
