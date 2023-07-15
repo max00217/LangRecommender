@@ -88,10 +88,6 @@ button:active {
   transform: translateY(0);
 }
 
-.colorscripter-code {
-  align-content: center;
-}
-
-.colorscripter-code-table {
-  text-align: center;
+small {
+  color: #DFDFDF;
 }
