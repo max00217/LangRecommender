@@ -5,11 +5,12 @@ body {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
+  background-color: #121212;
 }
 
 h1,
 h2 {
-  color: #333;
+  color: #DFDFDF;
   font-weight: bold;
 }
 
@@ -33,6 +34,10 @@ a {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 20px
+}
+
+b {
+  color: #DFDFDF;
 }
 
 a:hover {
