@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <h1>C++</h1><br><br>
+    <h1>C++</h1>
+    <img src="../assets/c++.png" alt="cpplogo" width="50" height="56">
+    <br><br>
 
     <small>
         C의 기능에서 추가적으로 객체지향 프로그래밍을 지원합니다. 클래스, 상속, 다형성 등의 개념을 사용할 수 있습니다.
@@ -15,6 +17,78 @@
         다중 상속과 직접 메모리 제어도 가능합니다.
         STL(Standard Template Library, 표준 템플릿 라이브러리)를 제공하여 알고리즘, 컨테이너, 반복자 등의 유용한 기능이 라이브러리 형태로 제공됩니다.
     </small><br><br>
+    <center><canvas id="radarChart" width="500" height="500"></canvas></center>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById("radarChart").getContext("2d");
+            const data = {
+                labels: [
+                "초보자 친화적", //0
+                "정적 및 동적 타이핑", //1
+                "객체 지향 패러다임", //2
+                "함수형 패러다임", //3
+                "커뮤니티 자원", //4
+                "멀티/크로스 플랫폼", //5
+                "속도", //6
+                "가독성", //7
+                "개발 속도", //8
+                "내장 라이브러리", //9
+                "Web", //10
+                "App", //11
+                "Game", //12
+                "AI", //13
+                "Data", //14
+            ],
+                datasets: [
+                    {
+                        label: "C++",
+                        backgroundColor: "rgba(100, 154, 210, 0.7)",
+                        borderColor: "rgb(255, 255, 255)",
+                        linecColor: "rgb(0, 255, 0)",
+                        data: [2, 2, 5, 0, 4, 4, 7, 3, 4, 4, 2, 3, 6, 2, 2],
+                    },
+                ],
+            };
+            const options = {
+                responsive: false,
+                plugins: {
+                  legend: {
+                    position: "top",
+                  },
+                  title: {
+                    display: false,
+                    text: "C++의 특징",
+                  },
+                },
+                scales: {
+                  r: {
+                    grid: {
+                      color: "rgba(255, 255, 255, 0.5)",
+                    },
+                    angleLines: {
+                      color: "rgba(255, 255, 255, 0.5)", 
+                    },
+                    ticks: {
+                      stepSize: 3,
+                      min: 0, 
+                      max: 7, 
+                      beginAtZero: 1,
+                      fontColor: "rgba(255, 255, 255, 1)", 
+                      showLabelBackdrop: false
+                    },
+                  },
+                },
+              }; 
+            new Chart(ctx, {
+                type: "radar",
+                data: data,
+                options: options,
+            });
+        });
+    </script>
+    <small>해당 그래프는 공식적인 자료가 아닙니다. 단순 참고용으로만 사용해주시길 바랍니다.</small><br>
+    <small>정적/동적 타이핑의 경우 음수일 경우 동적 타이핑, 양수일 경우 정적 타이핑을 지원하는 지표로 나타내었습니다.</small><br>
 
     <a href="https://isocpp.org">C++ 공식 웹 사이트로 바로가기</a><br><br>
 

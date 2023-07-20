@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <h1>Rust</h1><br><br>
+    <h1>Rust</h1>
+    <img src="../assets/rs.png" alt="rslogo" width="70" height="50">
+    <br><br>
     
     <small>
         Rust는 메모리 안전성을 보장하면서도 높은 성능을 지닌 언어입니다.
@@ -15,6 +17,78 @@
         컴파일 시간과 실행 시간 모두에 빠른 처리 속도를 보장합니다.
         안정성과 안전성 뿐만 아니라, 생산성 역시 고려한 언어이며 최근에는 WebAssembly를 위한 프로그래밍 언어로 주목받고 있습니다.
     </small><br><br>
+    <center><canvas id="radarChart" width="500" height="500"></canvas></center>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById("radarChart").getContext("2d");
+            const data = {
+                labels: [
+                "초보자 친화적", //0
+                "정적 및 동적 타이핑", //1
+                "객체 지향 패러다임", //2
+                "함수형 패러다임", //3
+                "커뮤니티 자원", //4
+                "멀티/크로스 플랫폼", //5
+                "속도", //6
+                "가독성", //7
+                "개발 속도", //8
+                "내장 라이브러리", //9
+                "Web", //10
+                "App", //11
+                "Game", //12
+                "AI", //13
+                "Data", //14
+            ],
+                datasets: [
+                    {
+                        label: "Rust",
+                        backgroundColor: "rgba(228, 55, 22, 0.7)",
+                        borderColor: "#E43716",
+                        linecColor: "rgb(0, 255, 0)",
+                        data: [4, 2, 4, 4, 4, 5, 5, 4, 4, 4, 5, 5, 4, 3, 3],
+                    },
+                ],
+            };
+            const options = {
+                responsive: false,
+                plugins: {
+                  legend: {
+                    position: "top",
+                  },
+                  title: {
+                    display: false,
+                    text: "Java의 특징",
+                  },
+                },
+                scales: {
+                  r: {
+                    grid: {
+                      color: "rgba(255, 255, 255, 0.5)",
+                    },
+                    angleLines: {
+                      color: "rgba(255, 255, 255, 0.5)", 
+                    },
+                    ticks: {
+                        stepSize: 3,
+                        min: 0, 
+                        max: 7, 
+                        beginAtZero: 1,
+                        fontColor: "rgba(255, 255, 255, 1)", 
+                        showLabelBackdrop: false
+                      },
+                  },
+                },
+              }; 
+            new Chart(ctx, {
+                type: "radar",
+                data: data,
+                options: options,
+            });
+        });
+    </script>
+    <small>해당 그래프는 공식적인 자료가 아닙니다. 단순 참고용으로만 사용해주시길 바랍니다.</small><br>
+    <small>정적/동적 타이핑의 경우 음수일 경우 동적 타이핑, 양수일 경우 정적 타이핑을 지원하는 지표로 나타내었습니다.</small><br>
 
     <a href="https://www.rust-lang.org">Rust 공식 웹 사이트로 바로가기</a><br><br>
 

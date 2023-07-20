@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <h1>Python</h1><br><br>
+    <h1>Python</h1>
+      <img src="../assets/py.png" alt="pylogo" width="60" height="60">
+      <br><br>
 
     <small>
        Python은 매우 많은 사용자를 보유한 언어이며, 따라서 이미 작성되어진 코드를 유지보수하기 가장 쉬운 언어 중 하나입니다.
@@ -15,6 +17,75 @@
        동적 타이핑 지원을 통해 타입 검사를 실행 시점에서 수행하며, 문법이 상대적으로 간단하고 직관적입니다.
        다른 언어에 비해 실행 속도가 비교적 느릴 수 있다는 단점이 있지만, 최근에는 Just-in-time(JIT) 컴파일러 등을 사용하여 성능을 향상시키는 프로젝트도 진행중입니다.
     </small><br><br>
+    <center><canvas id="radarChart" width="500" height="500"></canvas></center>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById("radarChart").getContext("2d");
+            const data = {
+                labels: [
+                "초보자 친화적", //0
+                "정적 및 동적 타이핑", //1
+                "객체 지향 패러다임", //2
+                "함수형 패러다임", //3
+                "커뮤니티 자원", //4
+                "멀티/크로스 플랫폼", //5
+                "속도", //6
+                "가독성", //7
+                "개발 속도", //8
+                "내장 라이브러리", //9
+                "Web", //10
+                "App", //11
+                "Game", //12
+                "AI", //13
+                "Data", //14
+            ],
+                datasets: [
+                    {
+                        label: "Python",
+                        backgroundColor: "rgba(55, 118, 171, 0.7)",
+                        borderColor: "rgb(255, 218, 80)",
+                        linecColor: "rgb(255, 99, 132)",
+                        data: [7, -2, 4, 0, 6, 3, 0, 4, 6, 6, 5, 4, 4, 7, 6],
+                    },
+                ],
+            };
+            const options = {
+                responsive: false,
+                plugins: {
+                  legend: {
+                    position: "top",
+                  },
+                  title: {
+                    display: false,
+                    text: "Python의 특징",
+                  },
+                },
+                scales: {
+                  r: {
+                    grid: {
+                      color: "rgba(255, 255, 255, 0.5)",
+                    },
+                    angleLines: {
+                      color: "rgba(255, 255, 255, 0.5)", 
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: "rgba(255, 255, 255, 1)", 
+                        showLabelBackdrop: false
+                      },
+                  },
+                },
+              }; 
+            new Chart(ctx, {
+                type: "radar",
+                data: data,
+                options: options,
+            });
+        });
+    </script>
+    <small>해당 그래프는 공식적인 자료가 아닙니다. 단순 참고용으로만 사용해주시길 바랍니다.</small><br>
+    <small>정적/동적 타이핑의 경우 음수일 경우 동적 타이핑, 양수일 경우 정적 타이핑을 지원하는 지표로 나타내었습니다.</small><br>
 
     <a href="https://www.python.org">Python 공식 웹 사이트로 바로가기</a><br><br>
 

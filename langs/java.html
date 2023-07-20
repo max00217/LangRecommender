@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <h1>Java</h1><br><br>
+    <h1>Java</h1>
+    <img src="../assets/java.png" alt="javalogo" width="50" height="65">
+    <br><br>
 
     <small>
        Java는 선언형 언어이며, 기본적으로 객체지향 프로그래밍을 지원합니다.
@@ -15,6 +17,78 @@
        주로 안드로이드 애플리케이션 개발에 활발히 사용됐으며, 현재는 그 자리를 Kotlin이 계승하였습니다.
        자체적으로 JRE(Java Runtime Environment)가상머신 위에서 동작하기 때문에, OS 환경과 관계없이 실행할 수 있는 크로스 플랫폼 환경을 보장합니다.
     </small><br><br>
+    <center><canvas id="radarChart" width="500" height="500"></canvas></center>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById("radarChart").getContext("2d");
+            const data = {
+                labels: [
+                "초보자 친화적", //0
+                "정적 및 동적 타이핑", //1
+                "객체 지향 패러다임", //2
+                "함수형 패러다임", //3
+                "커뮤니티 자원", //4
+                "멀티/크로스 플랫폼", //5
+                "속도", //6
+                "가독성", //7
+                "개발 속도", //8
+                "내장 라이브러리", //9
+                "Web", //10
+                "App", //11
+                "Game", //12
+                "AI", //13
+                "Data", //14
+            ],
+                datasets: [
+                    {
+                        label: "Java",
+                        backgroundColor: "rgba(225, 31, 33, 0.7)",
+                        borderColor: "#0D6EB6",
+                        linecColor: "rgb(0, 255, 0)",
+                        data: [2, 2, 4, 0, 6, 7, 3, 2, 4, 5, 3, 7, 5, 2, 2],
+                    },
+                ],
+            };
+            const options = {
+                responsive: false,
+                plugins: {
+                  legend: {
+                    position: "top",
+                  },
+                  title: {
+                    display: false,
+                    text: "Java의 특징",
+                  },
+                },
+                scales: {
+                  r: {
+                    grid: {
+                      color: "rgba(255, 255, 255, 0.5)",
+                    },
+                    angleLines: {
+                      color: "rgba(255, 255, 255, 0.5)", 
+                    },
+                    ticks: {
+                      stepSize: 3,
+                      min: 0, 
+                      max: 7, 
+                      beginAtZero: 1,
+                      fontColor: "rgba(255, 255, 255, 1)", 
+                      showLabelBackdrop: false
+                    },
+                  },
+                },
+              }; 
+            new Chart(ctx, {
+                type: "radar",
+                data: data,
+                options: options,
+            });
+        });
+    </script>
+    <small>해당 그래프는 공식적인 자료가 아닙니다. 단순 참고용으로만 사용해주시길 바랍니다.</small><br>
+    <small>정적/동적 타이핑의 경우 음수일 경우 동적 타이핑, 양수일 경우 정적 타이핑을 지원하는 지표로 나타내었습니다.</small><br>
 
     <a href="https://www.oracle.com/java/technologies/downloads/">Java(Oracle) 공식 웹 사이트로 바로가기</a><br><br>
 

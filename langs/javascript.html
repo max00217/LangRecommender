@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <h1>JavaScript</h1><br><br>
+    <h1>JavaScript</h1>
+    <img src="../assets/js.png" alt="jslogo" width="50" height="50">
+    <br><br>
 
     <small>
         JavaScript는 웹브라우저 상에서 동작하는 스크립트 언어이며, 최근에는 Node.js를 통해 서버 측에서도 사용됩니다.
@@ -15,6 +17,78 @@
         동적 타이핑을 지원하여 유연한 코딩이 가능하며, jQuery, React, AngularJS 등 많은 프레임워크와 라이브러리가 제공됩니다.
         TypeScript라는 JavaScript의 단점을 보완한 슈퍼셋 언어도 개발되었습니다.
     </small><br><br>
+    <center><canvas id="radarChart" width="500" height="500"></canvas></center>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById("radarChart").getContext("2d");
+            const data = {
+                labels: [
+                "초보자 친화적", //0
+                "정적 및 동적 타이핑", //1
+                "객체 지향 패러다임", //2
+                "함수형 패러다임", //3
+                "커뮤니티 자원", //4
+                "멀티/크로스 플랫폼", //5
+                "속도", //6
+                "가독성", //7
+                "개발 속도", //8
+                "내장 라이브러리", //9
+                "Web", //10
+                "App", //11
+                "Game", //12
+                "AI", //13
+                "Data", //14
+            ],
+                datasets: [
+                    {
+                        label: "JavaScript",
+                        backgroundColor: "rgba(247, 223, 30, 0.7)",
+                        borderColor: "#F7DF1E",
+                        linecColor: "rgb(0, 255, 0)",
+                        data: [5, -2, 2, 5, 7, 6, 4, 4, 3, 6, 7, 5, 4, 2, 1],
+                    },
+                ],
+            };
+            const options = {
+                responsive: false,
+                plugins: {
+                  legend: {
+                    position: "top",
+                  },
+                  title: {
+                    display: false,
+                    text: "Java의 특징",
+                  },
+                },
+                scales: {
+                  r: {
+                    grid: {
+                      color: "rgba(255, 255, 255, 0.5)",
+                    },
+                    angleLines: {
+                      color: "rgba(255, 255, 255, 0.5)", 
+                    },
+                    ticks: {
+                      stepSize: 3,
+                      min: 0, 
+                      max: 7, 
+                      beginAtZero: 1,
+                      fontColor: "rgba(255, 255, 255, 1)", 
+                      showLabelBackdrop: false
+                    },
+                  },
+                },
+              }; 
+            new Chart(ctx, {
+                type: "radar",
+                data: data,
+                options: options,
+            });
+        });
+    </script>
+    <small>해당 그래프는 공식적인 자료가 아닙니다. 단순 참고용으로만 사용해주시길 바랍니다.</small><br>
+    <small>정적/동적 타이핑의 경우 음수일 경우 동적 타이핑, 양수일 경우 정적 타이핑을 지원하는 지표로 나타내었습니다.</small><br>
 
     <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript">JavaScript 공식 웹 사이트로 바로가기</a><br><br>
 
