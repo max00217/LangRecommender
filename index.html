@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
     <title>Programming Language Recommender</title>
     <link rel="stylesheet" href="static/style.css">
     <style>
@@ -11,11 +13,12 @@
     </style>
     <script src="recommender.js" defer></script>
     <script>
-        window.onload = function() {
+        window.onload = function () {
             displayQuestion();
         }
     </script>
 </head>
+
 <body>
     <h1>Programming Language Recommender</h1>
     <div id="quiz-container">
@@ -31,5 +34,211 @@
     </div>
     <br><br>
     <b>모든 결과는 재미로만 봐 주시길 바랍니다!</b>
+    <br><br>
+    <div id="content" class="hidden">
+        <div id="images">
+            <a href="./langs/assembly.html" id="langbox"><img src="./assets/asm.png" alt="asmlogo" width="50" height="50"></a>
+            <a href="./langs/c.html" id="langbox"><img src="./assets/c.png" alt="clogo" width="50" height="56"></a>
+            <a href="./langs/c++.html" id="langbox"><img src="./assets/c++.png" alt="cpplogo" width="50" height="56"></a>
+            <a href="./langs/csharp.html" id="langbox"><img src="./assets/csharp.png" alt="csharplogo" width="56" height="56"></a>
+            <a href="./langs/dart.html" id="langbox"><img src="./assets/dart.png" alt="dartlogo" width="50" height="50"></a><br>
+            <a href="./langs/java.html" id="langbox"><img src="./assets/java.png" alt="javalogo" width="50" height="65"></a>
+            <a href="./langs/javascript.html" id="langbox"><img src="./assets/js.png" alt="jslogo" width="50" height="50"></a>
+            <a href="./langs/kotlin.html" id="langbox"><img src="./assets/kt.png" alt="ktlogo" width="50"  height="50"></a>
+            <a href="./langs/lua.html" id="langbox"><img src="./assets/lua.png" alt="lualogo" width="50" height="50"></a>
+            <a href="./langs/php.html" id="langbox"><img src="./assets/php.png" width="85" height="50"></a><br>
+            <a href="./langs/python.html" id="langbox"><img src="./assets/py.png" alt="pylogo" width="60" height="60"></a>
+            <a href=".langs/ruby.html" id="langbox"><img src="./assets/rb.png" alt="rblogo" width="50" height="50"></a>
+            <a href="./langs/rust.html" id="langbox"><img src="./assets/rs.png" alt="rslogo" width="70" height="50"></a>
+            <a href="./langs/scratch.html" id="langbox"><img src="./assets/scrc.png" alt="scrclogo" width="50" height="50"></a>
+            <a href="./langs/swift.html" id="langbox"><img src="./assets/swift.png" alt="swiftlogo" width="54" height="50"></a>
+            <center><canvas id="radarChart" width="700" height="700"></canvas></center>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const ctx = document.getElementById("radarChart").getContext("2d");
+                    const data = {
+                        labels: [
+                            "초보자 친화적", //0
+                            "정적 및 동적 타이핑", //1
+                            "객체 지향 패러다임", //2
+                            "함수형 패러다임", //3
+                            "커뮤니티 자원", //4
+                            "멀티/크로스 플랫폼", //5
+                            "속도", //6
+                            "가독성", //7
+                            "개발 속도", //8
+                            "내장 라이브러리", //9
+                            "Web", //10
+                            "App", //11
+                            "Game", //12
+                            "AI", //13
+                            "Data", //14
+                        ],
+                        datasets: [
+                            {
+                                label: "Assembly",
+                                backgroundColor: "rgba(0, 123, 205, 0.3)",
+                                borderColor: "#007BCD",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [-1, 2, 1, 1, 1, 1, 6, -1, -1, -1, 1, 1, 1, 1, 1],
+                            },
+                            {
+                                label: "C",
+                                backgroundColor: "rgba(100, 154, 210, 0.3)",
+                                borderColor: "rgb(0, 88, 156)",
+                                linecColor: "rgba(0, 255, 0)",
+                                data: [0, 2, 2, 2, 3, 4, 7, 2, 3, 2, 2, 3, 1, 1, 1],
+                            },
+                            {
+                                label: "C++",
+                                backgroundColor: "rgba(100, 154, 210, 0.3)",
+                                borderColor: "rgb(255, 255, 255)",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [2, 2, 5, 0, 4, 4, 7, 3, 4, 4, 2, 3, 6, 2, 2],
+                            },
+                            {
+                                label: "C#",
+                                backgroundColor: "rgba(161, 121, 220, 0.3)",
+                                borderColor: "#310077",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [2, 2, 5, 0, 4, 5, 7, 4, 4, 5, 2, 4, 7, 2, 2],
+                            },
+                            {
+                                label: "Dart",
+                                backgroundColor: "rgba(0, 197, 181, 0.3)",
+                                borderColor: "#0076CA",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [6, -2, 4, 3, 3, 5, 4, 4, 5, 3, 6, 7, 5, 2, 3],
+                            },
+                            {
+                                label: "Java",
+                                backgroundColor: "rgba(225, 31, 33, 0.3)",
+                                borderColor: "#0D6EB6",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [2, 2, 4, 0, 6, 7, 3, 2, 4, 5, 3, 7, 5, 2, 2],
+                            },
+                            {
+                                label: "JavaScript",
+                                backgroundColor: "rgba(247, 223, 30, 0.3)",
+                                borderColor: "#F7DF1E",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [5, -2, 2, 5, 7, 6, 4, 4, 3, 6, 7, 5, 4, 2, 1],
+                            },
+                            {
+                                label: "Kotlin",
+                                backgroundColor: "rgba(193, 71, 250, 0.3)",
+                                borderColor: "#DE3D73",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [4, 2, 4, 4, 5, 7, 5, 4, 5, 4, 4, 7, 4, 2, 2],
+                            },
+                            {
+                                label: "Lua",
+                                backgroundColor: "rgba(0, 0, 129, 0.3)",
+                                borderColor: "#818181",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [7, -2, 3, 3, 3, 5, 7, 5, 4, 2, 4, 3, 7, 3, 2],
+                            },
+                            {
+                                label: "PHP",
+                                backgroundColor: "rgba(120, 124, 181, 0.3)",
+                                borderColor: "#B0B4D6",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [4, -2, 4, 0, 3, 3, 1, 3, 4, 3, 7, 4, 1, 1, 1],
+                            },
+                            {
+                                label: "Python",
+                                backgroundColor: "rgba(55, 118, 171, 0.3)",
+                                borderColor: "rgb(255, 218, 80)",
+                                linecColor: "rgb(255, 99, 132)",
+                                data: [7, -2, 4, 0, 6, 3, 0, 4, 6, 6, 5, 4, 4, 7, 6],
+                            },
+                            {
+                                label: "Ruby",
+                                backgroundColor: "rgba(173, 11, 0, 0.3)",
+                                borderColor: "#AD0B00",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [6, -2, 4, 1, 4, 3, 0, 5, 5, 3, 7, 6, 3, 2, 3],
+                            },
+                            {
+                                label: "Rust",
+                                backgroundColor: "rgba(228, 55, 22, 0.3)",
+                                borderColor: "#E43716",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [4, 2, 4, 4, 4, 5, 5, 4, 4, 4, 5, 5, 4, 3, 3],
+                            },
+                            {
+                                label: "Scratch",
+                                backgroundColor: "rgba(249, 170, 55, 0.3)",
+                                borderColor: "#F9AA37",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [9, -1, 1, 1, 2, 1, 0, 4, 4, 1, 2, 2, 2, 2, 2],
+                            },
+                            {
+                                label: "Swift",
+                                backgroundColor: "rgba(252, 159, 61, 0.3)",
+                                borderColor: "#FE4D2C",
+                                linecColor: "rgb(0, 255, 0)",
+                                data: [4, 2, 4, 1, 5, 2, 7, 4, 4, 4, 4, 7, 6, 4, 2],
+                            },
+                        ],
+                    };
+                    const options = {
+                        responsive: false,
+                        plugins: {
+                            legend: {
+                                position: "top",
+                            },
+                            title: {
+                                display: false,
+                                text: "ASM의 특징",
+                            },
+                        },
+                        scales: {
+                            r: {
+                                grid: {
+                                    color: "rgba(255, 255, 255, 0.5)",
+                                },
+                                angleLines: {
+                                    color: "rgba(255, 255, 255, 0.5)",
+                                },
+                                ticks: {
+                                    stepSize: 3,
+                                    min: 0,
+                                    max: 7,
+                                    beginAtZero: 1,
+                                    fontColor: "rgba(255, 255, 255, 1)",
+                                    showLabelBackdrop: false
+                                },
+                            },
+                        },
+                    };
+                    new Chart(ctx, {
+                        type: "radar",
+                        data: data,
+                        options: options,
+                    });
+                });
+            </script>
+            <small>해당 그래프는 공식적인 자료가 아닙니다. 단순 참고용으로만 사용해주시길 바랍니다.</small><br>
+            <small>정적/동적 타이핑의 경우 음수일 경우 동적 타이핑, 양수일 경우 정적 타이핑을 지원하는 지표로 나타내었습니다.</small><br>
+        </div>
+    </div>
+    <button id="toggle-content" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent1"
+        aria-controls="navbarToggleExternalContent1" aria-expanded="false" aria-label="Toggle navigation">프로그래밍 언어 리스트 및
+        정보 보기</button>
+    <script>
+        window.onload = function () {
+            displayQuestion();
+            toggleContentButton = document.getElementById("toggle-content");
+            toggleContentButton.addEventListener("click", toggleContent);
+        }
+        function toggleContent() {
+            const content = document.getElementById("content");
+            content.classList.toggle("hidden");
+        }
+
+    </script>
 </body>
+
 </html>
