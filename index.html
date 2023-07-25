@@ -184,14 +184,14 @@
                         ],
                     };
                     const options = {
-                        responsive: false,
+                        responsive: true,
                         plugins: {
                             legend: {
                                 position: "top",
                             },
                             title: {
                                 display: false,
-                                text: "ASM의 특징",
+                            text: "",
                             },
                         },
                         scales: {
@@ -202,12 +202,15 @@
                                 angleLines: {
                                     color: "rgba(255, 255, 255, 0.5)",
                                 },
+                                pointLabels: {
+                                    color: "rgba(255, 255, 255, 1)",
+                                },
                                 ticks: {
+                                    color: "rgba(255, 255, 255, 1)",
                                     stepSize: 3,
                                     min: 0,
                                     max: 7,
                                     beginAtZero: 1,
-                                    fontColor: "rgba(255, 255, 255, 1)",
                                     showLabelBackdrop: false
                                 },
                             },

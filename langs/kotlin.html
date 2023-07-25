@@ -51,7 +51,7 @@
                 ],
             };
             const options = {
-                responsive: false,
+                responsive: true,
                 plugins: {
                   legend: {
                     position: "top",
@@ -69,7 +69,11 @@
                     angleLines: {
                       color: "rgba(255, 255, 255, 0.5)", 
                     },
+                    pointLabels: {
+                      color: "rgba(255, 255, 255, 1)",
+                    },
                     ticks: {
+                        color: "rgba(255, 255, 255, 1)",
                         stepSize: 3,
                         min: 0, 
                         max: 7, 
